@@ -55,11 +55,13 @@ function updateColor(color){
 
 function askUser(){ 
     let squares = prompt("Enter a number of squares (max 100)", '16');
-    if(squares > 100){
-        squares = prompt("You can make max of 100x100. Enter a new number", '16');
+    while(true){
+        if(squares > 100 || squares <=0){
+            squares = prompt("Choose a number between 0 and 100.", '16');
+        } else break;        
     }
-    if(squares > 0){
-        createGrid(squares);
-    }
+    
+    createGrid(squares);
+    
     
 }
