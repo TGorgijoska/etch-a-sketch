@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Raleway:wght@600&display=swap');
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --color-bisque-200: #ffe4c4;
+    --color-yellow-200:#fdffc4;
+    --color-blue-200: #C4DFFF;
+    --color-blue-300: #abd1ff;
+    --font-cursive:'Caveat', cursive;
+    --font-ss: 'Raleway', sans-serif;
+}
+body{
+    background-color: var(--color-bisque-200);
+}
+.main{
+    text-align: center;
+}
+h1{
+    color: var(--color-yellow-200);
+    font-family: var(--font-cursive);
+    font-size: 4em;
+    text-align: center;
+    margin: 1rem;
+}
+.container{
+    display: flex;
+    flex-flow: wrap;
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    background-color: var(--color-bisque-200);
+}
+.btn{
+    background-color: var(--color-blue-200);
+    color: var(--color-yellow-200);
+    border:none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-family: var(--font-ss);
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 1em;
+    width: 100px;
+    padding: 0.5em 0;
+    transition: 1s ease;
+
+}
+.btn:hover{
+    background-color: var(--color-blue-300);
+    box-shadow: 0 0 10px var(--color-blue-300);
+}
+.grid{
+    /* height: 31.25px;
+    width: 31.25px; */
+    background-color: var(--color-blue-300);
+    margin: 0px;
+    border: 1px solid var(--color-bisque-200);
+}
+.color{
+    background-color: var(--color-yellow-200);
+}
+
+@media (min-width:700px){
+        
+    .main{
+        display: flex;
+        justify-content: center;
+    }
+    .container{
+        margin: 0;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
