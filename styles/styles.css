@@ -52,6 +52,10 @@ h1{
     background-color: var(--color-blue-300);
     box-shadow: 0 0 10px var(--color-blue-300);
 }
+.activate{
+    background-color: var(--color-blue-300);
+    box-shadow: 0 0 10px var(--color-blue-300);
+}
 .grid{
     /* height: 31.25px;
     width: 31.25px; */

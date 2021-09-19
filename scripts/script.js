@@ -1,5 +1,6 @@
 const container = document.querySelector('.container');
 const clearBtn = document.querySelector('.btn-clear');
+const colorBtn = document.querySelector('.btn-color');
 const randomBtn = document.querySelector('.btn-random');
 const eraserBtn = document.querySelector('.btn-eraser');
 const shadesBtn = document.querySelector('.btn-shades');
@@ -11,10 +12,12 @@ let squareColor, color, dimension, squaresSum, currentColor = "color";
 const COLOR_YELLOW = "rgba(253, 255, 196, 1)";
 const COLOR_BLUE = "rgba(173, 210, 255, 1)";
 clearBtn.onclick = () => askUser();
+colorBtn.onclick = () => updateColor('color');
 randomBtn.onclick = () => updateColor('random');
 eraserBtn.onclick = () => updateColor('eraser');
 shadesBtn.onclick = () => updateColor('shades');
 createGrid(16);
+activateButton();
 
 function calcSqaresDimension(squares){
     return (conatinerDimensitions / squares) + 'px';
@@ -48,8 +51,6 @@ function changeColor(e){
     } else if (currentColor == 'shades'){
         let backgroundStyle = window.getComputedStyle(e.target, null).getPropertyValue("background-color");
         changeOpacity(backgroundStyle, e.target);
-        
-        // e.target.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + 0.1})`
     } else if(currentColor == 'eraser'){
         e.target.style.backgroundColor = COLOR_BLUE;
     }
@@ -66,6 +67,31 @@ function changeOpacity(bgcolor, target){
 }
 function updateColor(color){
     currentColor = color;
+    activateButton();
+}
+function activateButton(){
+    deactivateButtons();
+    switch (currentColor){
+        case 'color': 
+            colorBtn.classList.add('activate');
+            break;
+        case 'random':
+            randomBtn.classList.add('activate');
+            break;
+        case 'shades':
+            shadesBtn.classList.add('activate');
+            break;
+        case 'eraser':
+            eraserBtn.classList.add('activate');
+            break;
+            
+    }
+}
+function deactivateButtons(){
+    colorBtn.classList.remove('activate');
+    randomBtn.classList.remove('activate');
+    shadesBtn.classList.remove('activate');
+    eraserBtn.classList.remove('activate');
 }
 
 function askUser(){ 
